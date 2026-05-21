@@ -1,0 +1,117 @@
+:root{
+    --color-primary:purple;
+    --bg-dark:#141414;
+    --text-color:#fff;
+    --text-color2:#00ff88;
+    --header-bg:rgba(0,0,0,0.8);
+}
+/*light mode */
+.light-mode{
+     --color-primary:#f0f0f0;
+    --bg-dark:#fff;
+    --text-color:#141414;
+    --text-color2:#330737;
+    --header-bg:rgba(200,200,200,0.9);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg-dark);
+    color:var(--text-color);
+    transition:0.3s, color 0.3s;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 5%;
+    background:var(--header-bg);
+}
+.logo{
+    padding:10px;
+    font-family: sans-serif;
+}
+.logo span{
+    color:var(--text-color2);
+    padding:10px;
+}
+.logo:hover{
+    color:var(--bg-dark);
+    animation: acender 0.5s forwards;
+    letter-spacing:10px;
+}
+@keyframes acender{
+    to{
+        color:#fff;
+        text-shadow:0 0 10px #32f332,0 0 20px #a8d7e1;
+    }
+}
+nav ul{
+    display:flex;
+    list-style:none;
+    align-items:center;
+}
+nav ul li{
+    padding:10px;
+}
+nav ul li a{
+    color:var(--text-color);
+    text-decoration:none;
+}
+nav ul li a:hover{
+    color:var(--text-color2);
+    text-transform:uppercase;
+    font-weight:700;
+}
+
+.mode{
+    width:20px;
+    height:20px;
+}
+.slideshow{
+    width:100%;
+    height:50vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--text-color);
+    font-family:sans-serif;
+    animation: mudarCores 20s ease-in-out infinite;
+}
+
+@keyframes mudarCores{
+    0% {background:#ff9a9e;}
+    25% {background:#a18cd1;}
+    50% {background:#84fab0;}
+    75% {background:#f6d365;}
+    100% {background:#ff9a9e;}
+}
+
+.efeito-escrita{
+ font-size:3rem;
+ color:var(--text-color);
+ font-family:'Cascadia Code';
+ width:max-content;
+ margin:0 auto;
+ overflow:hidden;
+ white-space:nowrap; /*deixa tudo em linha*/
+ border-right:2px solid #00ffff;
+ animation:
+    digitando 4s steps(24) infinite alternate,
+    pisca 0.8s step-end infinite;
+text-shadow: 0 0 10px rgba(0,255,255,0.5);
+}
+@keyframes digitando{
+    0%, 10% {width:0;}
+    90%,100% {width:24ch}/*16ch equivale a largura de 16 caracteres*/
+}
+@keyframes pisca{
+    from, to {border-color:transparent;}
+    50% {border-color:#00ffff;}
+}
